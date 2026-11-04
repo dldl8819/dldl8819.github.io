@@ -34,9 +34,7 @@ order: 5
 
 팀이 맡은 금융기관 고객사 중 은행과 생명보험사 두 곳의 운영을 담당했고, 두 곳의 장애 대응에 가장 많은 시간을 썼습니다.
 
-- 고객사 요청을 분석해 Java(Spring Boot)·React 코드를 수정하고 배포
-  - Java: 분석 ID가 비어 들어올 때 URL의 analysisId를 쓰도록 보완, 담당자 현행화 로직 수정, 결재자 검증 로직 수정
-  - React: 자가 점검 안내 메시지 수정, 현황 알림 메뉴 정리 등 화면 작업
+- 고객사 요청을 분석해 Java(Spring Boot) 업무 로직과 React 화면을 수정하고 배포
 - 서버 정기 점검, 고객사 담당자 응대
 - Docker 기반 서비스 운영 및 장애 대응
 - 기술: Java, Spring Boot, React, TypeScript, Docker, Linux, Git, Bitbucket, Nexus Repository

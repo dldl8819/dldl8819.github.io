@@ -34,7 +34,7 @@ Backend-leaning full-stack engineer with 5+ years of professional experience, 4 
 
 2024.05 – 2026.03 · Operations and maintenance of an open-source vulnerability management system at two financial institutions (a bank and a life insurer)
 
-- Worked on site at client institutions: analyzed client requests, changed Java (Spring Boot) and React code, and deployed the fixes. Examples: falling back to the URL's analysis ID when the request arrived without one, and correcting approver-validation and owner-sync logic.
+- Worked on site at client institutions: analyzed client requests, changed Java (Spring Boot) business logic and React screens, and deployed the fixes.
 - Ran routine server checks and handled day-to-day contact with client staff.
 - Handled incident response on Docker/Linux, including the two incidents described above (Docker CIDR collision, Nexus ingestion failure).
 
