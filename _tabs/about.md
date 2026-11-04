@@ -6,9 +6,9 @@ order: 5
 
 ## Full-Stack Engineer
 
-기능 개발부터 데이터 연동과 운영 장애 대응까지 연결해 온 개발자입니다. Java/Spring Boot, React/TypeScript, 데이터베이스, Linux/Docker 환경에서 금융·제조·공공 시스템을 개발했습니다. Kafka 실시간 변환, 인증·결재·형상관리 연동, WebSocket 메시징과 네트워크 장애 분석 경험을 갖추고 있습니다.
+운영 중인 금융기관 시스템의 장애 원인을 찾고 고쳐 온 Java 백엔드 개발자입니다. 금융기관 고객사에 상주하며 고객사 요청을 받아 Java/Spring Boot·React 코드를 고치고, 배포하고, 서버를 점검했습니다. 에러 로그가 남지 않는 장애는 패킷과 라우팅까지 따라가 원인을 특정했습니다. 그 전에는 공공·유통 EAI 환경에서 기관 간 연동 오류를 처리했습니다.
 
-최근에는 FastAPI, SQLAlchemy, LangChain을 활용한 AI 에이전트 개발로 영역을 넓히고 있으며, 이 블로그에는 그 과정에서 정리한 프로젝트와 기술 글을 올립니다.
+최근에는 FastAPI, SQLAlchemy, LangGraph를 활용한 AI 에이전트 개발로 영역을 넓히고 있으며, 이 블로그에는 그 과정에서 정리한 프로젝트와 기술 글을 올립니다.
 
 경력 5년 1개월
 
@@ -28,32 +28,26 @@ order: 5
 
 ### 쿠도커뮤니케이션 · AX사업부 AX서비스개발팀 · 대리
 
-2024.05.01 - 2026.03.06 (1년 10개월) · 정규직 · 오픈소스 취약점 점검 시스템 구축 및 유지보수
+2024.05.01 - 2026.03.06 (1년 10개월) · 정규직 · 오픈소스 취약점 관리 시스템 운영 및 유지보수
 
-- 금융권 고객사 대상 오픈소스 취약점 점검 시스템 백엔드·프론트엔드 개발 및 운영
-- Docker 기반 서비스 운영 및 장애 분석
-- Nexus Repository 연동 및 파일 처리 로직 개선
-- LDAP 기반 사용자 인증 및 인사정보 연동 개발
+**오픈소스 취약점 관리 시스템 운영·유지보수 — 금융기관 2곳(은행, 생명보험사)** (2024.12 - 2026.03)
 
-**오픈소스 취약점 관리 시스템 구축 프로젝트 — 금융기관 A** (2024.12.11 - 2026.03.10)
+팀이 맡은 금융기관 고객사 중 은행과 생명보험사 두 곳의 운영을 담당했고, 두 곳의 장애 대응에 가장 많은 시간을 썼습니다.
 
-- LDAP 인사 정보 연동, 취약점 분석 시스템 백엔드·프론트엔드 개발, Docker 기반 서비스 운영 및 장애 대응
-- 기술: React, TypeScript, Java, Spring Boot, Git, Docker, Linux, Bitbucket, Nexus
-- 성과: Nexus Repository 연동 과정에서 발생한 파일 반입 실패 문제를 로그·파일 처리 흐름 분석으로 원인을 특정해 개선, 저장소 연동 안정성 향상 및 분석 실패율 감소
+- 고객사 요청을 분석해 Java(Spring Boot)·React 코드를 수정하고 배포
+  - Java: 분석 ID가 비어 들어올 때 URL의 analysisId를 쓰도록 보완, 담당자 현행화 로직 수정, 결재자 검증 로직 수정
+  - React: 자가 점검 안내 메시지 수정, 현황 알림 메뉴 정리 등 화면 작업
+- 서버 정기 점검, 고객사 담당자 응대
+- Docker 기반 서비스 운영 및 장애 대응
+- 기술: Java, Spring Boot, React, TypeScript, Docker, Linux, Git, Bitbucket, Nexus Repository
 
-**오픈소스 취약점 관리 시스템 구축 프로젝트 — 금융기관 B** (2025.03.21 - 2026.01.05)
+**장애 사례 1 — 에러 로그 없는 간헐적 접속 장애**
 
-- 취약점 분석 시스템 기능 개발 및 유지보수, Docker 기반 서비스 운영 및 환경 구성, 장애 대응 및 원인 분석
-- 기술: React, TypeScript, Java, Spring Boot, Git, Docker, Linux, Bitbucket
-- 성과: 서비스 운영 안정성 개선, 분석 처리 프로세스 안정화
+특정 내부망 사용자만 접속이 끊기는데 애플리케이션 로그에는 예외가 없었습니다. tcpdump로 요청(SYN)은 도착하지만 응답(SYN-ACK)이 나가지 않는 것을 확인했고, 라우팅 테이블에서 Docker가 자동 할당한 대역이 고객사 내부망과 겹쳐 응답이 Docker bridge로 나가는 것을 찾았습니다. 재시작 없이 적용되는 정적 라우트로 복구했고, 근본 대책으로 Docker 주소 풀을 내부망과 겹치지 않게 지정하는 방안을 정리했습니다.
 
-**오픈소스 취약점 관리 시스템 구축 프로젝트 — 금융기관 C** (2025.06.20 - 2025.12.12)
+**장애 사례 2 — 예외 없이 결과만 비던 저장소 반입 실패**
 
-- ITSM(결재), SSO, 인사정보(IAM), 형상관리(eCAMS) 연동
-- 기술: React, TypeScript, Java, Spring Boot, Git, Docker, Linux, Bitbucket
-- 성과: ESSO 연동 로그인 기능 개발
-
-세 금융기관 프로젝트를 병행하며, Spring Boot·React/TypeScript로 취약점 데이터 관리·시각화 기능을 개발하고 Docker/Linux 환경에서 운영했습니다. 접속 장애를 패킷과 라우팅 기준으로 추적해 Docker 네트워크 CIDR 충돌을 원인으로 특정하고, 정적 라우팅으로 TCP 흐름을 정상화해 운영 안정성을 확보했습니다. 여러 금융기관의 요구사항을 공통 기능과 개별 연동 범위로 구조화해 개선·유지보수에 반영했습니다.
+Nexus Repository에서 분석 대상 파일을 가져오는 과정이 특정 조건에서만 실패했고, 예외 없이 분석 결과만 누락됐습니다. 요청 → 수신 → 저장 → 후속 처리로 구간을 나눠 성공·실패 로그를 비교해 원인 지점을 특정했고, 이를 본사 개발 담당자에게 전달해 수정이 반영됐습니다.
 
 ### 누리꿈소프트 · 혁신사업부 DX개발팀 · 프로
 
@@ -66,12 +60,12 @@ order: 5
 
 **실시간 데이터 플랫폼 구축** (2024.01.17 - 2024.02.29, 발주처: 카드사(금융))
 
-- Oracle 변경 데이터를 Kafka로 전달하는 흐름에서 Java 기반 Single Message Transform을 개발·검증
+- Oracle 변경 데이터를 Kafka로 전달하는 흐름에서 Single Message Transform 소스를 반영하고 변환 결과를 확인
 - 기술: Apache Kafka, Oracle GoldenGate for Big Data, Oracle, Java
 
 **REST API 문서 자동화** (2024.03 - 2024.04, 발주처: 제조업체(철강) B)
 
-- JUnit 테스트 결과와 Spring REST Docs를 연계해 검증 가능한 API 문서 체계 구축
+- JUnit 테스트와 Spring REST Docs를 연계해, 테스트를 통과해야 API 문서가 생성되는 체계 구축
 - 기술: Java, Spring Boot, REST Docs
 
 ### 이썸테크 · 서비스사업본부 서비스개발팀 · 사원
@@ -109,40 +103,33 @@ order: 5
 
 | 분야 | 기술 |
 | --- | --- |
-| Backend | Java, Spring Boot, JSP, REST API, FastAPI |
+| Backend | Java, Spring Boot, JSP, REST API, Python, FastAPI, SQLAlchemy |
+| AI | LangGraph, LangChain, RAG, pgvector, MCP |
 | Frontend | React, TypeScript, Next.js, JavaScript, Vue.js, jQuery |
 | Database | PostgreSQL, MySQL, MariaDB, Oracle, Tibero, MongoDB |
-| Integration | LDAP, SSO/IAM, ITSM, EAI, WebSocket, Kafka, CTI |
-| Infrastructure | Linux (CentOS, Rocky Linux), AIX, Docker, XenServer, Nexus Repository, OpenResty, n8n |
-| Data Engineering | Python, Hadoop, Apache Spark, Kafka, Snowflake |
-| Testing / Docs | JUnit, Spring REST Docs |
+| Integration | EAI, WebSocket, CTI |
+| Infrastructure | Linux (CentOS, Rocky Linux), AIX, Docker, Nexus Repository, OpenResty, n8n |
+| Data | Kafka, Snowflake, Hadoop·Spark(교육 과정) |
+| Testing / Docs | JUnit, Spring REST Docs, pytest |
 | Collaboration | Git, SVN, Bitbucket, JIRA |
 
 ## Engineering Focus
 
-**구조적 문제 정의 및 원인 분석**
+**장애 원인 추적**
 
-- 로그·시스템 자원 데이터를 기반으로 문제 발생 구조를 식별
-- 단순 장애 복구가 아니라 재발 가능성을 제거하는 방향으로 개선
-- 파일 반입 실패, 저장소 연동 오류 같은 구조적 이슈를 근본 원인 단위로 해결
+- 애플리케이션 로그에 흔적이 없으면 패킷·라우팅 등 아래 계층으로 범위를 옮겨 원인을 좁힙니다.
+- 구간을 나눠 성공·실패 로그를 비교해 값이 달라지는 지점을 찾습니다.
+- 복구에서 끝내지 않고, 같은 장애가 다시 생기지 않도록 근본 대책을 정리합니다.
 
-**운영 환경 기반 안정성 개선**
+**운영 중인 시스템 유지보수**
 
-- Docker 기반 서비스 운영 및 장애 대응
-- 금융권 취약점 분석 시스템 안정화
-- LDAP 연동 인증 시스템 설계 및 구현
+- 고객사 요청을 분석해 코드를 고치고, 배포하고, 정기 점검을 합니다.
+- 고객사 담당자와 직접 소통하며 요청 범위와 영향을 확인합니다.
 
-**기술 검증(PoC) 중심 실행**
+**검증 가능한 구조**
 
-- 저장소 연동·처리 구조를 검증한 뒤 적용
-- 운영 영향도와 확장성을 고려한 개선
-- 실제 운영 환경 적용을 전제로 한 구조 개선
-
-**데이터 기반 기술 이해**
-
-- Python, Hadoop, Spark 기반 데이터 처리 이해
-- MongoDB, Snowflake 자격 보유
-- 컨테이너·가상화 환경 운영 경험
+- 테스트를 통과해야 생성되는 API 문서(Spring REST Docs)
+- LLM 응답을 골든셋으로 측정하는 회귀 테스트
 
 ## Education
 

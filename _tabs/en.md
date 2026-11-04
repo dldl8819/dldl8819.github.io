@@ -17,7 +17,7 @@ Backend-leaning full-stack engineer with 5+ years of professional experience, 4 
 
 ## Selected Strengths
 
-- **Root-cause debugging.** Traced a recurring service outage to a Docker network CIDR collision using packet and routing analysis, then restored TCP flow with static routing. Diagnosed repeated artifact ingestion failures in a Nexus Repository integration by following logs and file-handling flow end to end.
+- **Root-cause debugging.** Traced an intermittent connection failure, with nothing in the application logs, to a Docker network CIDR collision using packet and routing analysis, then restored TCP flow with a static route. Pinpointed where artifact ingestion from a Nexus Repository silently failed by comparing success and failure logs stage by stage, and handed the finding to the headquarters developer who fixed the product code.
 - **Reviewing code for what it leaks, not just what it returns.** Framework defaults are frequently unsafe: a FastAPI validation error echoes the submitted request body, including the password, so I replaced it with a handler that returns field names only. Applied the same review habit to HTML escaping of database-sourced values and to auth errors that reveal whether an account exists.
 - **Verifiable documentation and tests.** Wired JUnit test results into Spring REST Docs so API documentation fails the build when behavior changes. Maintain detailed public engineering notes explaining design decisions and failure analysis.
 
@@ -32,20 +32,19 @@ Backend-leaning full-stack engineer with 5+ years of professional experience, 4 
 
 ### Cudo Communication — Engineer, AX Service Development
 
-2024.05 – 2026.03 · Open-source vulnerability management systems delivered in parallel for three financial institutions
+2024.05 – 2026.03 · Operations and maintenance of an open-source vulnerability management system at two financial institutions (a bank and a life insurer)
 
-- Developed vulnerability data management and visualization features in Spring Boot and React/TypeScript, operated on Docker/Linux.
-- Owned enterprise integrations: LDAP identity synchronization, SSO/ESSO sign-in, ITSM approval workflow, and configuration management.
-- Resolved the two production incidents described above (Docker CIDR collision, Nexus ingestion failures), improving integration reliability and reducing analysis failures.
-- Structured overlapping client requirements into shared features versus per-client integration scope.
+- Worked on site at client institutions: analyzed client requests, changed Java (Spring Boot) and React code, and deployed the fixes. Examples: falling back to the URL's analysis ID when the request arrived without one, and correcting approver-validation and owner-sync logic.
+- Ran routine server checks and handled day-to-day contact with client staff.
+- Handled incident response on Docker/Linux, including the two incidents described above (Docker CIDR collision, Nexus ingestion failure).
 
 ### Nuriggum Soft — Engineer, DX Development
 
 2023.08 – 2024.04
 
-- Built an MSA-based manufacturing operations system for a steel manufacturer.
-- Developed and validated a Java Single Message Transform for Oracle-to-Kafka change data streaming at a card issuer.
-- Automated REST API documentation with JUnit and Spring REST Docs.
+- Automated REST API documentation with JUnit and Spring REST Docs, so documentation is only generated when tests pass.
+- Applied and verified a Single Message Transform for Oracle-to-Kafka change data streaming at a card issuer.
+- Built web screens for an MSA-based manufacturing operations system for a steel manufacturer.
 
 ### Esum Tech — Engineer, Service Development
 
@@ -70,7 +69,7 @@ Backend-leaning full-stack engineer with 5+ years of professional experience, 4 
 | Data | PostgreSQL, Oracle, MySQL/MariaDB, Tibero, MongoDB, Kafka, Snowflake |
 | Infrastructure | Docker, Linux (CentOS/Rocky), Nexus Repository, Git, SVN |
 | Testing / Docs | JUnit, pytest, Spring REST Docs |
-| Integration | LDAP, SSO/IAM, ITSM, EAI, WebSocket |
+| Integration | EAI, WebSocket |
 
 ## Side Project
 
