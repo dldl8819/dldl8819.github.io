@@ -145,7 +145,11 @@ Nexus Repository에서 분석 대상 파일을 가져오는 과정이 특정 조
 | 패스트캠퍼스 | 나도 할 수 있는 Java&Spring 웹 개발 종합반 | 2023.12.27 - 2024.02.21 | 65시간 |
 | 한국스마트정보교육원 | 디지털컨버전스 융합 SW개발자 양성과정D | 2021.11.15 - 2022.04.28 | 896시간 |
 
-현재 진행 중인 한화 내일 아카데미 과정의 학습 기록은 [Naver 블로그](https://blog.naver.com/dldl8819)와 [GitHub](https://github.com/dldl8819/hanwha-ai-agent-academy)에 정리하고 있습니다. 서울 홍대점(마포구 월드컵북로4길 77, 3층 · 홍대입구역 2번 출구 도보 5분)에서 진행됩니다.
+한화 내일 아카데미 과정의 학습 기록은 [Naver 블로그](https://blog.naver.com/dldl8819)와 [GitHub](https://github.com/dldl8819/hanwha-ai-agent-academy)에 정리했습니다.
+
+## Awards
+
+- **'H-Agent Challenge 2026' 경진대회 최우수상** (2026.11) — 한화 내일 아카데미 ICT부문 캡스톤 프로젝트 [사내 IT 장애·문의 대응 AI Agent (ITssue)](https://github.com/issue-helpdesk/issue-helpdesk). 6인 팀의 팀장으로 검색(임베딩 모델 비교·선정, 권한 필터, 근거 문장 선택)을 맡았습니다. ([자세히 보기](/projects/))
 
 ## Certifications
 

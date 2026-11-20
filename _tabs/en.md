@@ -75,9 +75,13 @@ Backend-leaning full-stack engineer with 5+ years of professional experience, 4 
 
 **[Heifam](https://www.heifam.co.kr/)** — team-balancing and match-record service for a StarCraft community, built solo and running in production. Next.js/TypeScript front end, Spring Boot API, Supabase (PostgreSQL). Evaluates every possible team combination to minimize rating gap, updates ratings with an ELO algorithm from match results, and derives per-player and per-composition statistics. ([source](https://github.com/dldl8819/heifam))
 
+## Capstone Project
+
+**[IT Helpdesk AI Agent (ITssue)](https://github.com/issue-helpdesk/issue-helpdesk)** — **Top Excellence Award (최우수상), H-Agent Challenge 2026**, Hanwha Tomorrow Academy. An agent that answers repetitive internal IT questions first and turns the rest into Jira tickets assigned to the right engineer. Team lead of six; owned retrieval: compared KURE-v1 and BGE-M3 on a 46-question evaluation set and chose BGE-M3 (top-1 hit 74% vs 59%), skipped a reranker that added no top-1 gain at 31 seconds per query, and enforced document access scope as a SQL condition in search. FastAPI, LangGraph, Claude API, PostgreSQL + pgvector, React. Company and data are fictional.
+
 ## Education & Certifications
 
-- Hanwha Tomorrow Academy — AI Agent Service Development, 400 hours (2026.09 – 2026.11, in progress)
+- Hanwha Tomorrow Academy — AI Agent Service Development, 400 hours (2026.09 – 2026.11)
 - Jeonju University — B.A. in English Education, double major in Counseling Psychology (2020)
 - SnowPro Core (2025) · MongoDB Certified Associate DBA (2024) · MongoDB Certified Associate Developer (2024)
 
